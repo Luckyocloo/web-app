@@ -41,4 +41,16 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            slackSend channel: 'jenkins-test', color: 'good', message: "Build successful: ${currentBuild.fullDisplayName}"
+        }
+        failure {
+            slackSend channel: 'jenkins-test', color: 'danger', message: "Build failed: ${currentBuild.fullDisplayName}"
+        }
+        aborted {
+            slackSend channel: 'jenkins-test', color: 'warning', message: "Build aborted: ${currentBuild.fullDisplayName}"
+        }
+    }
 }
+
