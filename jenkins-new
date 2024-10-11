@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven'
+    }
+
+    stages {
+        stage('gitcheckout'){
+            steps{
+                git branch: 'main', url: 'https://github.com/Luckyocloo/web-app.git'
+            }
+        } 
+    }
+}
