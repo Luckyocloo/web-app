@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools{
-        maven 'jomacs'
+        maven 'maven'
     }
 
     stages{
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('maven build'){
             steps{
-                sh 'mvn clean'
+                sh 'mvn clean package'
             }
         }
     }
