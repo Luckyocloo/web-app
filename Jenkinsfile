@@ -24,7 +24,7 @@ pipeline {
            steps{
                script{
                    withSonarQubeEnv('sonar'){
-                       sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=cuticle-webapp"
+                       sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=adwoa-webapp"
                    }
                }
            }
